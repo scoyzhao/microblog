@@ -4,3 +4,6 @@ node_modules
 # ignore credentials
 credentials.js
 
+# ignore log
+npm-debug.log
+
