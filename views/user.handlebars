@@ -1,0 +1,25 @@
+{{!-- user page --}}
+
+<form class="form-horizontal" method="POST">
+	<fieldset>
+		<legend>Send message</legend>
+		<div class="form-group">
+			<div class="col-sm-7 col-sm-offset-2">
+				<input class="form-control" type="text" name="content" placeholder="Please input something">
+			</div>
+			<div class="col-sm-1">
+				<button class="btn btn-primary" type="submit">Send</button>
+			</div>
+		</div>
+	</fieldset>
+</form>
+
+<div class="container">
+	{{#each posts}}
+		<div class="col-sm-3 col-sm-offset-1">
+			<h2><a href="/user/{{user}}">{{user}}</a></h2>
+			<p><small>{{time}}</small></p>
+			<p>{{content}}</p>
+		</div>
+{{/each}}
+</div>
