@@ -88,9 +88,9 @@ module.exports = {
                 req.session.flash = {
                     type: 'danger',
                     intro: 'E_OF_USER   ',
-                    message: 'error1',
+                    message: 'error',
                 }
-                return next(err);
+                return res.redirect('/login');
             }
             if (!user) {
                 req.session.flash = {
@@ -107,7 +107,7 @@ module.exports = {
                         intro: 'E_OF_USER   ',
                         message: 'Login error',
                     }
-                    return next(err);
+                    return res.redirect('/login');
                 }
                 // console.log(req.user);
                 // console.log(req.session.passport);

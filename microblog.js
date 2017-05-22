@@ -6,6 +6,7 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const session = require('express-session');
 const mongoose = require('mongoose');
+// const flash = require('connect-flash');
 
 const passport = require('./config/passport');
 const auth = require('./controllers/auth.js');
@@ -22,6 +23,7 @@ app.set('view engine', 'handlebars');
 app.set('port', process.env.PORT || 3000);
 
 app.use(express.static(__dirname + '/public'));
+// app.use(flash());
 
 // configue logger
 app.use(logger('dev'));

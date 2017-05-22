@@ -54,22 +54,11 @@ passport.use(new LocalStrategy(
                 return next(err);
             }
             if (!user) {
-                req.session.flash = {
-                    type: 'danger',
-                    intro: 'E_OF_USER   ',
-                    message: 'Incorrect username!',
-                }
                 return done(null, false);
             }
             if (!bcrypt.compareSync(password, user.password)) {
-                req.session.flash = {
-                    type: 'danger',
-                    intro: 'E_OF_USER   ',
-                    message: 'Incorrect password!',
-                }
                 return done(null, false);
             }
-
             return done(null, user);
         });
     }
