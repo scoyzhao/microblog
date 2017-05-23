@@ -90,13 +90,13 @@ module.exports = {
                     intro: 'E_OF_USER   ',
                     message: 'error',
                 }
-                return res.redirect('/login');
+                return next(err);
             }
             if (!user) {
                 req.session.flash = {
                     type: 'danger',
                     intro: 'E_OF_USER   ',
-                    message: 'No user',
+                    message: 'No user or wrong password',
                 }
                 return res.redirect('/login');
             }
@@ -107,7 +107,7 @@ module.exports = {
                         intro: 'E_OF_USER   ',
                         message: 'Login error',
                     }
-                    return res.redirect('/login');
+                    return next(err);
                 }
                 // console.log(req.user);
                 // console.log(req.session.passport);
